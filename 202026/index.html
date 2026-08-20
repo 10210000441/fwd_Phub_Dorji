@@ -1,27 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>p_g09</title>
+    <title>p_g09 </title>
 	
     <style>
+	
 	.cards{
-	background-color:#212529;
-	color:#e9ecef;
-	padding:20px;
-	display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+	  background-color:#586268;
+	  border:2px solid #717981;
+	  padding:12px;
+	  text-align:center;
+
+	  }
+	  
+	.card{
+	  display: grid;
+	  grid-template-columns:2fr 1fr;
+	  background-color:#adb5bd;
+	  gap:8px;
+	  padding:8px;
+
 	}
+	
+	h5{
+	  color:#e9ecef;
+	  font-weight:900;
+	  text-transform:uppercase;
+	}
+	
+	a{
+	 position:relative;
+	 padding: 10px 20px;
+	 background:#ced4da;
+	 border-radius:8px;
+	 text-decoration:none;
+	 color:#343a40;
+	
+	}
+	
+	.navbar{
+	  background:#6c757d;
+	  padding:12px;
+	  display:flex;
+	  justify-content:space-between;
+	 
+	}
+	
+	.list{
+	  display:flex;
+	  gap:12px;
+	  justify-content:end;
+	}
+	
+	img{
+	  height:40px;
+	  width:40px;
+	  
+	}
+	
+	@media (max-width:700px){
+	.card {
+	   grid-template-columns:1fr;
+	 }
+	}
+	
+	
     </style>
 </head>
-
-<body>
-   <div class="cards">1</div>
-   <div class="cards">2</div>
-   <div class="cards">3</div>
-   <div class="cards">4</div>
-
-
-
-</body>
-
+<header>
+ <nav class="navbar">
+ <img src="Images/image-Photoroom.png"/>
+    <li class="list">
+	   <a href="#"> Home</a>
+       <a href="#"> About Us</a> 
+       <a href="#"> Pricing</a>
+	   <a href="#"> Team</a>
+       <a href="#"> Contact Us</a>
+	</li>
+ </nav>
+</header>                                                                                
+        <body>
+          <div class="card">
+            <div class="cards">
+			  <h5>Gyeltshen<h5>
+			</div>
+            <div class="cards">
+			  <h5> Raj Kumar</h5>
+			</div>
+             <div class="cards">
+			  <h5>Phub Dorji</h5>
+			</div>
+			 <div class="cards">
+			  <h5>Tempa Dorji</h5>
+			</div>
+			<div class="cards">
+			  <h5> Pema Selden<h5>
+			</div>
+            <div class="cards">
+			  <h5>Jamtsho</h5>
+			</div>
+             <div class="cards">
+			  <h5>Kingue</h5>
+			</div>
+			 <div class="cards">
+			  <h5>Ugyen</h5>
+			</div>
+          </div>
+        </body>
 </html>
