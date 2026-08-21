@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Class Work - Responsive</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        color: #333d4d;
+        background: #ffffff;
+      }
+
+      .navbar {
+        background: #1e2749;
+        padding: 14px 28px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #ffffff;
+        font-weight: bold;
+        letter-spacing: 1px;
+        font-size: 15px;
+      }
+
+      .logo img {
+        height: 26px;
+        width: auto;
+      }
+
+      .list {
+        list-style: none;
+        display: flex;
+        gap: 44px;
+      }
+
+      .list a {
+        color: #dfe3ee;
+        text-decoration: none;
+        font-size: 13px;
+      }
+
+      .list a:hover {
+        color: #e3a63a;
+      }
+
+      #nav-toggle {
+        display: none;
+      }
+
+      .hamburger {
+        display: none;
+        cursor: pointer;
+        padding: 4px;
+      }
+
+      .hamburger span {
+        display: block;
+        width: 24px;
+        height: 3px;
+        background: #ffffff;
+        border-radius: 2px;
+        margin: 4px 0;
+      }
+
+      .hero {
+        background: #eef1fa;
+        text-align: center;
+        padding: 70px 20px;
+      }
+
+      .hero h1 {
+        font-family: Georgia, "Times New Roman", serif;
+        color: #1e2749;
+        font-size: 34px;
+        margin-bottom: 16px;
+      }
+
+      .hero p {
+        color: #5b6472;
+        font-size: 13px;
+        margin-bottom: 28px;
+      }
+
+      .btn {
+        display: inline-block;
+        background: #e3a63a;
+        color: #1e2749;
+        font-weight: bold;
+        font-size: 13px;
+        text-decoration: none;
+        padding: 12px 26px;
+        border-radius: 4px;
+      }
+
+      .btn:hover {
+        background: #cf9430;
+      }
+
+      .offer {
+        padding: 50px 28px 60px;
+        text-align: center;
+      }
+
+      .offer h2 {
+        font-family: Georgia, "Times New Roman", serif;
+        color: #1e2749;
+        font-size: 24px;
+        margin-bottom: 34px;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 24px;
+      }
+
+      .card {
+        border: 1px solid #e5e7eb;
+        border-radius: 6px;
+        padding: 20px;
+        text-align: left;
+      }
+
+      .card h3 {
+        color: #1e2749;
+        font-size: 15px;
+        margin-bottom: 10px;
+      }
+
+      .card p {
+        color: #5b6472;
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      .footer {
+        background: #f7f8fc;
+        text-align: center;
+        padding: 26px 20px;
+        color: #8a919c;
+        font-size: 12px;
+        font-style: italic;
+      }
+
+      @media (max-width: 900px) {
+        .cards {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .list {
+          gap: 24px;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .navbar {
+          padding: 14px 18px;
+        }
+
+        .hamburger {
+          display: block;
+        }
+
+        .list {
+          display: none;
+          flex-direction: column;
+          gap: 0;
+          width: 100%;
+          order: 3;
+        }
+
+        #nav-toggle:checked ~ .list {
+          display: flex;
+        }
+
+        .list li {
+          border-top: 1px solid #33406b;
+        }
+
+        .list a {
+          display: block;
+          padding: 12px 4px;
+        }
+
+        .cards {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          padding: 50px 16px;
+        }
+
+        .hero h1 {
+          font-size: 26px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="Images/image.png" alt="RIM logo" />
+        </div>
+        <input type="checkbox" id="nav-toggle" />
+        <label class="hamburger" for="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <ul class="list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="hero">
+      <h1>Welcome to Your Project</h1>
+      <p>A short, friendly line that describes what this site is about.</p>
+      <a class="btn" href="#">Get Started</a>
+    </section>
+    <section class="offer">
+      <h2>What We Offer</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Design</h3>
+          <p>Clean layouts that put your content first.</p>
+        </div>
+        <div class="card">
+          <h3>Build</h3>
+          <p>Semantic HTML and modern CSS, built to last.</p>
+        </div>
+        <div class="card">
+          <h3>Launch</h3>
+          <p>Responsive from phone to desktop, out of the box.</p>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">(Remaining sections — About, Contact — added in a later week)</footer>
+  </body>
+</html>
