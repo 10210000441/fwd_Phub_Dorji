@@ -1,0 +1,470 @@
+/* =========================================================================
+   HORIZON — a one-page demo built only with what Weeks 1-3 covered:
+   semantic HTML, the box model, typography, color, selectors,
+   CSS Grid, Flexbox, and one responsive breakpoint. No JavaScript.
+   ========================================================================= */
+
+/* ---------- Reset (element selector) ---------- */
+* {
+  box-sizing: border-box; /* width/height include padding + border, not added on top */
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* small bonus: smooth in-page jumps for the nav links */
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif; /* body font: plain and easy to read */
+  color: #1b2347;
+  line-height: 1.6; /* typography: breathing room between wrapped lines */
+}
+
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif; /* heading font: contrast with body */
+  color: #182347;
+  line-height: 1.25;
+}
+
+a {
+  text-decoration: none;
+}
+
+code {
+  font-family: "Courier New", monospace;
+  background-color: #eef2fb;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* =========================================================================
+   BANNER — Flexbox for the header row
+   ========================================================================= */
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo pushed left, nav pushed right */
+  background-color: white;
+  padding: 18px 40px; /* box model: padding inside the banner */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap:8px;
+}
+img{
+	height:60px;
+}
+.logo-mark {
+  margin-right: 10px;
+}
+
+.logo-text {
+  color:black;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu a {
+  color: #343a40;
+  font-size: 15px;
+  font-weight:900;
+  margin-left: 32px; /* box model: spacing between nav links, not a flex "gap" */
+}
+
+.menu a:hover {
+  color: green; /* pseudo-class selector */
+}
+
+/* =========================================================================
+   BUTTONS — reused across hero, cta, and elsewhere (class selector reuse)
+   ========================================================================= */
+.btn {
+  display: inline-block;
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12); /* color: rgba() for a soft shadow */
+}
+
+.btn-primary {
+  background-color: #eba53f;
+  color: #182347;
+}
+
+.btn-primary:hover {
+  background-color: #e0972c;
+}
+
+.btn-light {
+  background-color: #ffffff;
+  color: #182347;
+}
+
+.btn-light:hover {
+  background-color: #eef2fb;
+}
+
+/* =========================================================================
+   HERO — box model + typography, centered
+   ========================================================================= */
+.hero {
+  background-color: #eef2fb;
+  text-align: center;
+  padding: 100px 20px 90px;
+}
+
+.eyebrow,
+.section-eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #b8791f;
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  max-width: 780px;
+  margin: 0 auto 20px;
+}
+
+.hero .lead {
+  font-size: 17px;
+  color: #5a6580;
+  max-width: 620px;
+  margin: 0 auto 36px;
+}
+
+/* =========================================================================
+   FEATURES — CSS Grid arranges the row, Flexbox arranges inside each card
+   ========================================================================= */
+.features {
+  padding: 90px 40px;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 30px;
+  margin-bottom: 48px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* three equal columns */
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;             /* Flexbox: lay out what's inside this one card */
+  flex-direction: column;
+  text-align: left;
+  background-color: #ffffff;
+  border: 1px solid #e3e8f5;
+  border-radius: 10px;
+  padding: 32px 26px;
+}
+
+.card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.icon-design { background-color: #7a2e2e; }
+.icon-build { background-color: #3f6b4f; }
+.icon-launch { background-color: #eba53f; }
+
+.card h3 {
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14.5px;
+  color: #5a6580;
+}
+
+/* =========================================================================
+   ABOUT — the same Grid property, a different value (2 columns, not 3)
+   ========================================================================= */
+.about {
+  background-color: #f7f8fc;
+  padding: 90px 40px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two equal columns instead of three */
+  gap: 48px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-visual {
+  position: relative;
+  height: 280px;
+}
+
+.about-shape {
+  position: absolute;
+  border-radius: 14px;
+}
+
+.shape-a {
+  width: 220px;
+  height: 220px;
+  background-color: #182347;
+  top: 0;
+  left: 20px;
+}
+
+.shape-b {
+  width: 160px;
+  height: 160px;
+  background-color: #eba53f;
+  top: 90px;
+  left: 190px;
+}
+
+.shape-c {
+  width: 90px;
+  height: 90px;
+  background-color: #3f6b4f;
+  top: 0;
+  left: 260px;
+}
+
+.about-copy h2 {
+  font-size: 27px;
+  margin-bottom: 18px;
+}
+
+.about-copy p {
+  color: #5a6580;
+  margin-bottom: 16px;
+  font-size: 15.5px;
+}
+
+/* =========================================================================
+   STATS — Flexbox row, wraps automatically on narrow screens
+   ========================================================================= */
+.stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;              /* same property taught for the nav, reused here */
+  background-color: #182347;
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.stat {
+  padding: 16px 20px;
+}
+
+.stat-number {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #eba53f;
+}
+
+.stat-label {
+  display: block;
+  color: #c9d3ec;
+  font-size: 13.5px;
+  letter-spacing: 0.5px;
+  margin-top: 6px;
+}
+
+/* =========================================================================
+   TESTIMONIAL — typography-led section, descendant selectors
+   ========================================================================= */
+.testimonial {
+  padding: 90px 40px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.testimonial blockquote p {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 24px;
+  color: #182347;
+  max-width: 700px;
+  margin: 0 auto 20px;
+  line-height: 1.5;
+}
+
+.testimonial-author {
+  color: #5a6580;
+  font-size: 14px;
+}
+
+/* =========================================================================
+   CTA — reuses .btn, a third background color, box model spacing
+   ========================================================================= */
+.cta {
+  background-color: #3f6b4f;
+  color: #ffffff;
+  text-align: center;
+  padding: 80px 40px;
+}
+
+.cta h2 {
+  color: #ffffff;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.cta p {
+  color: #dcebe1;
+  margin-bottom: 28px;
+}
+
+/* =========================================================================
+   FOOTER — CSS Grid for the columns, Flexbox for the bottom bar
+   ========================================================================= */
+.site-footer {
+  background-color: #10182f;
+  color: #c9d3ec;
+  padding: 70px 40px 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr; /* a third Grid layout, a third set of values */
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+.footer-col h4 {
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.footer-col a {
+  display: block;
+  color: #c9d3ec;
+  font-size: 14.5px;
+  margin-bottom: 12px;
+}
+
+.footer-col a:hover {
+  color: #ffffff;
+}
+
+.footer-logo {
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+.footer-brand p {
+  font-size: 14px;
+  color: #9aa7c9;
+  max-width: 340px;
+}
+
+.footer-address {
+  font-size: 14.5px;
+  color: #c9d3ec;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #26305a; /* box model: a border used as a visual divider */
+  padding: 22px 0;
+  font-size: 13px;
+  color: #8a97bd;
+}
+
+.footer-legal {
+  display: flex;
+}
+
+.footer-legal a {
+  color: #8a97bd;
+  margin-left: 20px;
+}
+
+.footer-legal a:hover {
+  color: #ffffff;
+}
+
+/* =========================================================================
+   RESPONSIVE — one breakpoint, the same one used in Week 3
+   ========================================================================= */
+@media (max-width: 700px) {
+  .menu {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    row-gap: 8px;
+  }
+
+  .menu a {
+    margin-left: 18px;
+  }
+
+  .hero {
+    padding: 70px 20px 60px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr; /* three columns become one */
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr; /* two columns become one */
+  }
+
+  .about-visual {
+    height: 200px;
+    margin-bottom: 10px;
+  }
+
+  .stats {
+    justify-content: center;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr; /* three footer columns become one */
+    gap: 32px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .footer-legal a:first-child {
+    margin-left: 0;
+  }
+}
