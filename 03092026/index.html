@@ -3,63 +3,776 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Practise Exercises</title>
-		<style>
-			body {
-				background: #ced4da;
-				margin: 0;
-			}
-			h1,
-			h2,
-			h3,
-			h4 {
-				margin-bottom: 0.5em;
-			}
-
-			.hero {
-				padding: 8px;
-				background-color: #adb5bd;
-				text-align:center;
-			}
-			.navy {
-				color: navy;
-			}
-			.second{
-			text-align:center;
-			padding:12px;
-			}
-			.btn{
-				background-color: #adb5bd;
-				border: none;
-				padding: 10px 20px;
-				text-align: center;
-				display: inline-block;
-				font-size: 16px;
-				margin: 4px 2px;
-				cursor: pointer;
-			}
-			
-			.apple{
-			text-decoration:underline;
-			color:white;
-			font-weight:900;
-			}
-		</style>
+		<title>Selectors &amp; Units — CSS Revision</title>
+		<meta
+			name="description"
+			content="A visual revision guide to CSS group selectors, combinators, class stacking, !important and the px / % / em / rem / vw / vh units."
+		/>
+		<link rel="stylesheet" href="style.css" />
 	</head>
 
 	<body>
-		<section class="hero">
-			<h1 class="navy">Trending</h1>
-			<h2 class="navy">Color</h2>
-			<h3>Palette</h3>
-		</section>
-		
-		<div class="second">
-		<a class="apple" href="https://www.dcpl.org" target="_blank">Visit DCPL</a>
-		<div>
-		<button class="btn apple">Join</button>
-		</div>
-		</div>
-			<script src="script.js"></script>
+		<header class="topbar">
+			<div class="wrap">
+				<a class="brand" href="#top">
+					<svg
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						aria-hidden="true"
+					>
+						<polyline points="16 18 22 12 16 6" />
+						<polyline points="8 6 2 12 8 18" />
+					</svg>
+					<span>Selectors &amp; Units</span>
+				</a>
+				<nav aria-label="Sections">
+					<ul class="navlinks">
+						<li class="nav-item active"><a href="#top">Start</a></li>
+						<li class="nav-item"><a href="#selectors">Selectors</a></li>
+						<li class="nav-item"><a href="#combinators">Combinators</a></li>
+						<li class="nav-item"><a href="#classes">Classes</a></li>
+						<li class="nav-item"><a href="#units">Units</a></li>
+						<li class="nav-item"><a href="#cheatsheet">Cheat sheet</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<main id="top">
+			<!-- ============================ HERO ============================ -->
+			<section class="hero">
+				<div class="wrap">
+					<h1>Every selector, <em>seen</em> in action</h1>
+					<p>
+						Thirteen CSS concepts — the four combinators, class stacking,
+						<code>!important</code>, and six length units — each one shown as code beside the thing
+						it actually does.
+					</p>
+					<div class="hero-actions">
+						<a class="btn btn-primary btn-large" href="#selectors">Start revising</a>
+						<a class="btn btn-large" href="#cheatsheet">Jump to cheat sheet</a>
+					</div>
+					<div class="stats">
+						<div class="stat"><strong>4</strong><span>combinators</span></div>
+						<div class="stat"><strong>6</strong><span>length units</span></div>
+						<div class="stat"><strong>13</strong><span>live demos</span></div>
+					</div>
+				</div>
+			</section>
+
+			<!-- ========================= CATEGORIES ========================= -->
+			<section class="section">
+				<div class="wrap">
+					<div class="cat-grid">
+						<a class="cat-card" href="#selectors">
+							<span class="cat-icon">
+								<svg
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									aria-hidden="true"
+								>
+									<line x1="8" y1="6" x2="21" y2="6" />
+									<line x1="8" y1="12" x2="21" y2="12" />
+									<line x1="8" y1="18" x2="21" y2="18" />
+									<line x1="3" y1="6" x2="3.01" y2="6" />
+									<line x1="3" y1="12" x2="3.01" y2="12" />
+									<line x1="3" y1="18" x2="3.01" y2="18" />
+								</svg>
+							</span>
+							<h3>Group selectors</h3>
+							<p>One rule, many targets, separated by commas.</p>
+						</a>
+						<a class="cat-card" href="#combinators">
+							<span class="cat-icon">
+								<svg
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									aria-hidden="true"
+								>
+									<circle cx="5" cy="6" r="2" />
+									<circle cx="19" cy="6" r="2" />
+									<circle cx="12" cy="18" r="2" />
+									<path d="M7 6h10" />
+									<path d="M6 8l5 8" />
+									<path d="M18 8l-5 8" />
+								</svg>
+							</span>
+							<h3>Combinators</h3>
+							<p>
+								Space, <code>&gt;</code>, <code>+</code> and <code>~</code> — four ways to describe
+								position.
+							</p>
+						</a>
+						<a class="cat-card" href="#classes">
+							<span class="cat-icon">
+								<svg
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									aria-hidden="true"
+								>
+									<path
+										d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"
+									/>
+									<line x1="7" y1="7" x2="7.01" y2="7" />
+								</svg>
+							</span>
+							<h3>Classes &amp; weight</h3>
+							<p>Stacking classes, requiring both, and when <code>!important</code> is fair.</p>
+						</a>
+						<a class="cat-card" href="#units">
+							<span class="cat-icon">
+								<svg
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									aria-hidden="true"
+								>
+									<path d="M2 12h20" />
+									<path d="M6 8v8" />
+									<path d="M10 10v4" />
+									<path d="M14 10v4" />
+									<path d="M18 8v8" />
+								</svg>
+							</span>
+							<h3>Measurement units</h3>
+							<p>px, %, em, rem, vw and vh — and what each one answers to.</p>
+						</a>
+					</div>
+				</div>
+			</section>
+
+			<!-- ========================= 1. GROUP =========================== -->
+			<section class="section" id="selectors">
+				<div class="wrap">
+					<div class="section-head">
+						<span class="eyebrow">01 — Group selectors</span>
+						<h2>One rule, several selectors</h2>
+						<p>
+							Separate the selectors with commas and the declaration block applies to all of them.
+							Three rules become one, and they can never drift apart later.
+						</p>
+					</div>
+
+					<article class="concept">
+						<div class="concept-head">
+							<h3>The comma</h3>
+							<span class="token">A, B, C { }</span>
+						</div>
+						<p>
+							The heading below, the sub-heading and the quote are coloured by a single rule — not
+							three near-identical ones.
+						</p>
+						<div class="split">
+							<div>
+								<div class="pane-label">CSS</div>
+								<pre><span class="cmt">/* one rule, three targets */</span>
+<span class="sel">h4</span>,
+<span class="sel">h5</span>,
+<span class="sel">blockquote</span> {
+  <span class="prop">color</span>: <span class="val">indigo</span>;
+}
+
+<span class="cmt">/* the same idea, elsewhere */</span>
+<span class="sel">input</span>, <span class="sel">textarea</span>, <span class="sel">select</span> {
+  <span class="prop">font-family</span>: <span class="val">inherit</span>;
+}</pre>
+							</div>
+							<div>
+								<div class="pane-label">Result</div>
+								<div class="demo d-group">
+									<h4>A heading</h4>
+									<h5>A sub-heading</h5>
+									<blockquote>And a block quote — all one rule.</blockquote>
+								</div>
+							</div>
+						</div>
+					</article>
+				</div>
+			</section>
+
+			<!-- ====================== 2. COMBINATORS ======================== -->
+			<section class="section" id="combinators">
+				<div class="wrap">
+					<div class="section-head">
+						<span class="eyebrow">02 — Combinators</span>
+						<h2>Four ways to say <em>where</em></h2>
+						<p>
+							A combinator describes an element's position relative to another one. Change the
+							character between two selectors and you change the question being asked.
+						</p>
+					</div>
+
+					<!-- descendant -->
+					<article class="concept">
+						<div class="concept-head">
+							<h3>Descendant</h3>
+							<span class="token">A B</span>
+						</div>
+						<p>
+							A plain space means <em>anywhere inside</em> — depth is irrelevant, so the link
+							wrapped in a <code>&lt;div&gt;</code> is caught along with the one at the top level.
+						</p>
+						<div class="split">
+							<div>
+								<div class="pane-label">CSS</div>
+								<pre><span class="sel">.sidebar a</span> {
+  <span class="prop">font-weight</span>: <span class="val">700</span>;
+}</pre>
+							</div>
+							<div>
+								<div class="pane-label">Result — both links match</div>
+								<div class="demo">
+									<div class="d-sidebar">
+										<a href="#combinators">Link 1<span class="depth">depth 1</span></a>
+										<div>
+											<a href="#combinators">Link 2<span class="depth">depth 2</span></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</article>
+
+					<!-- child -->
+					<article class="concept">
+						<div class="concept-head">
+							<h3>Child</h3>
+							<span class="token">A &gt; B</span>
+						</div>
+						<p>
+							<code>&gt;</code> matches direct children only. “Team” is a child of the inner
+							<code>&lt;ul&gt;</code>, not of <code>.menu</code> — so it never becomes a pill, no
+							matter how much it looks like a sibling of the others.
+						</p>
+						<div class="split">
+							<div>
+								<div class="pane-label">CSS</div>
+								<pre><span class="sel">.menu &gt; li</span> {
+  <span class="prop">display</span>: <span class="val">inline-block</span>;
+  <span class="prop">background</span>: <span class="val">indigo</span>;
+}
+
+<span class="cmt">/* .menu li — a space — would</span>
+<span class="cmt">   have caught "Team" too. */</span></pre>
+							</div>
+							<div>
+								<div class="pane-label">Result — “Team” is skipped</div>
+								<div class="demo">
+									<ul class="d-menu">
+										<li>Home</li>
+										<li>
+											About
+											<ul>
+												<li>Team — not a direct child</li>
+											</ul>
+										</li>
+										<li>Contact</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</article>
+
+					<!-- adjacent -->
+					<article class="concept">
+						<div class="concept-head">
+							<h3>Adjacent sibling</h3>
+							<span class="token">A + B</span>
+						</div>
+						<p>
+							<code>+</code> matches exactly one element: the very next sibling. This is how a lead
+							paragraph or a form's spacing gets set without any extra class.
+						</p>
+						<div class="split">
+							<div>
+								<div class="pane-label">CSS</div>
+								<pre><span class="sel">h4 + p</span> {
+  <span class="prop">background</span>: <span class="val">green</span>;
+}
+
+<span class="cmt">/* real-world uses */</span>
+<span class="sel">img + p</span>     { <span class="prop">margin-top</span>: <span class="val">0</span>; }
+<span class="sel">label + input</span> { <span class="prop">margin-left</span>: <span class="val">8px</span>; }</pre>
+							</div>
+							<div>
+								<div class="pane-label">Result — only the first paragraph</div>
+								<div class="demo d-adj">
+									<h4>Title</h4>
+									<p>First paragraph — matched</p>
+									<p>Second paragraph — untouched</p>
+									<p>Third paragraph — untouched</p>
+								</div>
+							</div>
+						</div>
+					</article>
+
+					<!-- general sibling -->
+					<article class="concept">
+						<div class="concept-head">
+							<h3>General sibling</h3>
+							<span class="token">A ~ B</span>
+						</div>
+						<p>
+							<code>~</code> keeps going: every matching sibling that follows, not just the next
+							one. Same markup as above, one character different, three matches instead of one.
+						</p>
+						<div class="split">
+							<div>
+								<div class="pane-label">CSS</div>
+								<pre><span class="sel">h4 ~ p</span> {
+  <span class="prop">background</span>: <span class="val">indigo</span>;
+}</pre>
+							</div>
+							<div>
+								<div class="pane-label">Result — every following paragraph</div>
+								<div class="demo d-gen">
+									<h4>Title</h4>
+									<p>First paragraph — matched</p>
+									<p>Second paragraph — matched</p>
+									<p>Third paragraph — matched</p>
+								</div>
+							</div>
+						</div>
+					</article>
+
+					<div class="note">
+						<strong>The one-line version:</strong> a space asks “inside?”, <code>&gt;</code> asks
+						“directly inside?”, <code>+</code> asks “immediately after?”, and <code>~</code> asks
+						“after, at all?”.
+					</div>
+					<div class="note">
+						All four need a shared parent for <code>+</code> and <code>~</code> — siblings only.
+						Neither can ever look backwards to a previous element.
+					</div>
+				</div>
+			</section>
+
+			<!-- ======================== 3. CLASSES ========================== -->
+			<section class="section" id="classes">
+				<div class="wrap">
+					<div class="section-head">
+						<span class="eyebrow">03 — Classes &amp; weight</span>
+						<h2>Stacking classes, and the space that changes everything</h2>
+						<p>
+							One element can carry as many classes as it needs. In the stylesheet, whether you put
+							a space between two class selectors decides if you are describing one element or two.
+						</p>
+					</div>
+
+					<article class="concept">
+						<div class="concept-head">
+							<h3>Multiple classes on one element</h3>
+							<span class="token">class="a b c"</span>
+						</div>
+						<p>
+							A base class plus modifiers. The base carries the shape; each modifier changes one
+							thing. Note the padding — it is written once in <code>em</code>, so the large button
+							grows its own padding.
+						</p>
+						<div class="split">
+							<div>
+								<div class="pane-label">HTML</div>
+								<pre>&lt;button class=<span class="val">"btn btn-primary"</span>&gt;Save&lt;/button&gt;
+
+&lt;button class=<span class="val">"btn btn-primary btn-large"</span>&gt;
+  Buy now
+&lt;/button&gt;</pre>
+							</div>
+							<div>
+								<div class="pane-label">Result</div>
+								<div class="demo">
+									<div class="tag-row">
+										<button class="btn" type="button">Base</button>
+										<button class="btn btn-primary" type="button">Primary</button>
+										<button class="btn btn-primary btn-large" type="button">Primary, large</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</article>
+
+					<article class="concept">
+						<div class="concept-head">
+							<h3>Requiring both classes</h3>
+							<span class="token">.a.b</span>
+						</div>
+						<p>
+							No space means “one element that has both”. With a space it becomes a descendant
+							selector and hunts for a
+							<code>.featured</code> <em>inside</em> a <code>.card</code> — a completely different
+							question, and the classic typo.
+						</p>
+						<div class="split">
+							<div>
+								<div class="pane-label">CSS</div>
+								<pre><span class="cmt">/* one element, both classes */</span>
+<span class="sel">.card.featured</span> {
+  <span class="prop">border</span>: <span class="val">2px solid gold</span>;
+}
+
+<span class="cmt">/* the typo: a .featured INSIDE a .card */</span>
+<span class="cmt">.card .featured { ... }</span>
+
+<span class="cmt">/* and every card after the featured one */</span>
+<span class="sel">.card.featured ~ .card</span> {
+  <span class="prop">opacity</span>: <span class="val">0.6</span>;
+}</pre>
+							</div>
+							<div>
+								<div class="pane-label">Result</div>
+								<div class="demo">
+									<div class="d-cards">
+										<div class="card">
+											A plain card
+											<p>class="card"</p>
+										</div>
+										<div class="card featured highlighted">
+											The featured card
+											<p>class="card featured highlighted"</p>
+										</div>
+										<div class="card">
+											After the featured one
+											<p>dimmed by the ~ rule</p>
+										</div>
+										<div class="card">
+											Also after it
+											<p>dimmed by the ~ rule</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</article>
+
+					<article class="concept">
+						<div class="concept-head">
+							<h3>!important</h3>
+							<span class="token">use sparingly</span>
+						</div>
+						<p>
+							<code>!important</code> steps outside the specificity contest entirely. An id normally
+							beats a class — but not against an <code>!important</code> declaration, as the heading
+							below shows.
+						</p>
+						<div class="split">
+							<div>
+								<div class="pane-label">CSS + HTML</div>
+								<pre><span class="sel">#demo-header</span> { <span class="prop">color</span>: <span class="val">blue</span>; }
+<span class="sel">.title</span> { <span class="prop">color</span>: <span class="val">red</span> <span class="val">!important</span>; }
+
+&lt;h4 id=<span class="val">"demo-header"</span> class=<span class="val">"title"</span>&gt;…&lt;/h4&gt;
+
+<span class="cmt">/* the fair use: a utility that must</span>
+<span class="cmt">   win wherever it is dropped in */</span>
+<span class="sel">.hidden</span> { <span class="prop">display</span>: <span class="val">none</span> <span class="val">!important</span>; }
+
+<span class="cmt">/* usually you just need to be more</span>
+<span class="cmt">   specific instead */</span>
+<span class="sel">#buy-btn</span> { <span class="prop">background</span>: <span class="val">red</span>; }</pre>
+							</div>
+							<div>
+								<div class="pane-label">Result — red wins</div>
+								<div class="demo">
+									<h4 id="demo-header" class="title">An id vs. an !important class</h4>
+									<span class="verdict">
+										<svg
+											viewBox="0 0 24 24"
+											width="14"
+											height="14"
+											fill="none"
+											stroke="currentColor"
+											stroke-width="2.5"
+											stroke-linecap="round"
+											aria-hidden="true"
+										>
+											<polyline points="20 6 9 17 4 12" />
+										</svg>
+										red !important beats #id
+									</span>
+									<p class="hidden">This paragraph is hidden by .hidden.</p>
+								</div>
+							</div>
+						</div>
+					</article>
+				</div>
+			</section>
+
+			<!-- ========================= 4. UNITS =========================== -->
+			<section class="section" id="units">
+				<div class="wrap">
+					<div class="section-head">
+						<span class="eyebrow">04 — Measurement units</span>
+						<h2>Six units, six different questions</h2>
+						<p>
+							Every unit is relative to <em>something</em> — except one. Knowing what each answers
+							to is the whole trick. The root font-size here is <code>16px</code>.
+						</p>
+					</div>
+
+					<div class="unit-grid">
+						<!-- px -->
+						<div class="unit">
+							<h3><span class="u">px</span> fixed</h3>
+							<p>
+								Absolute. Identical everywhere, relative to nothing — which is exactly what you want
+								for a hairline border or a shadow.
+							</p>
+							<div class="bars">
+								<div class="bar-row"><span>32px</span><span class="bar px-32"></span></div>
+								<div class="bar-row"><span>96px</span><span class="bar px-96"></span></div>
+								<div class="bar-row"><span>160px</span><span class="bar px-160"></span></div>
+							</div>
+							<div class="math">border: 1px · radius: 6px · shadow: 0 2px 4px</div>
+						</div>
+
+						<!-- % -->
+						<div class="unit">
+							<h3><span class="u">%</span> of the parent</h3>
+							<p>
+								A share of the parent's own size. The three tracks below are the same width, so the
+								fills read as proportions.
+							</p>
+							<div class="bars">
+								<div class="bar-row">
+									<span>25%</span><span class="track"><span class="fill w-25"></span></span>
+								</div>
+								<div class="bar-row">
+									<span>50%</span><span class="track"><span class="fill w-50"></span></span>
+								</div>
+								<div class="bar-row">
+									<span>75%</span><span class="track"><span class="fill w-75"></span></span>
+								</div>
+							</div>
+							<div class="math">25% of a 900px parent = 225px</div>
+						</div>
+
+						<!-- em -->
+						<div class="unit">
+							<h3><span class="u">em</span> of this element's font</h3>
+							<p>
+								Relative to the element's own <code>font-size</code>. Both tags below share one rule
+								— <code>padding: 0.5em</code> — and land on different pixel values.
+							</p>
+							<div class="tag-row">
+								<span class="tag sm">14px → 7px padding</span>
+								<span class="tag lg">24px → 12px</span>
+							</div>
+							<div class="math">0.5em × 14px = 7px &nbsp;·&nbsp; 0.5em × 24px = 12px</div>
+							<p style="margin-top: 1rem">
+								Because it looks at the nearest font-size, em
+								<strong>compounds</strong> when nested:
+							</p>
+							<div class="demo" style="font-size: 1rem">
+								1em here
+								<div class="nest">
+									1.2em inside
+									<div class="nest">1.2em again — now 1.44×</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- rem -->
+						<div class="unit">
+							<h3><span class="u">rem</span> of the root font</h3>
+							<p>
+								Relative to the <code>&lt;html&gt;</code> font-size only, so it never compounds
+								however deep it sits. This is the unit for layout rhythm.
+							</p>
+							<div>
+								<div class="rem-box h-half"></div>
+								<div class="rem-box h-one"></div>
+								<div class="rem-box h-two"></div>
+								<div class="rem-box h-three"></div>
+							</div>
+							<div class="math">0.5rem = 8px · 1rem = 16px · 2rem = 32px · 3rem = 48px</div>
+							<div class="math">24px ÷ 16 → font-size: 1.5rem</div>
+						</div>
+
+						<!-- vw / vh -->
+						<div class="unit">
+							<h3><span class="u">vw / vh</span> of the viewport</h3>
+							<p>
+								A percentage of the browser window itself, ignoring every parent. Resize the window
+								and the bar below moves with it.
+							</p>
+							<div class="bars">
+								<div class="bar-row"><span>50vw</span><span class="vw-demo"></span></div>
+							</div>
+							<div class="math">50vw on a 375px phone = 187.5px</div>
+							<p style="margin-top: 1rem">
+								And <code>vh</code> for full-screen sections — always as <code>min-height</code>, so
+								extra content can still grow the box instead of overflowing it:
+							</p>
+							<div class="vh-demo">min-height: 30vh</div>
+						</div>
+
+						<!-- picking one -->
+						<div class="unit">
+							<h3>Which one, when</h3>
+							<p>A working default for each job:</p>
+							<div class="bars">
+								<div class="bar-row"><span>px</span><span>borders, radii, shadows</span></div>
+								<div class="bar-row"><span>%</span><span>widths inside a parent</span></div>
+								<div class="bar-row"><span>em</span><span>padding that tracks its text</span></div>
+								<div class="bar-row"><span>rem</span><span>type scale, spacing rhythm</span></div>
+								<div class="bar-row"><span>vh</span><span>full-screen sections</span></div>
+								<div class="bar-row"><span>vw</span><span>display type, with clamp()</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- ======================= CHEAT SHEET ========================== -->
+			<section class="section" id="cheatsheet">
+				<div class="wrap">
+					<div class="section-head">
+						<span class="eyebrow">05 — Cheat sheet</span>
+						<h2>The whole sheet, on one screen</h2>
+						<p>Everything above, compressed to the line you'd want in an exam.</p>
+					</div>
+
+					<div class="table-wrap">
+						<table>
+							<caption class="sr-only">
+								CSS selectors and units summary
+							</caption>
+							<thead>
+								<tr>
+									<th scope="col">Syntax</th>
+									<th scope="col">Reads as</th>
+									<th scope="col">Matches</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><code>A, B</code></td>
+									<td>group</td>
+									<td>Both A and B — one rule, no duplication</td>
+								</tr>
+								<tr>
+									<td><code>A B</code></td>
+									<td>descendant</td>
+									<td>Any B inside A, at any depth</td>
+								</tr>
+								<tr>
+									<td><code>A &gt; B</code></td>
+									<td>child</td>
+									<td>Only a B that is a direct child of A</td>
+								</tr>
+								<tr>
+									<td><code>A + B</code></td>
+									<td>adjacent sibling</td>
+									<td>The one B immediately after A</td>
+								</tr>
+								<tr>
+									<td><code>A ~ B</code></td>
+									<td>general sibling</td>
+									<td>Every B after A, same parent</td>
+								</tr>
+								<tr>
+									<td><code>.a.b</code></td>
+									<td>both classes</td>
+									<td>One element carrying both — no space</td>
+								</tr>
+								<tr>
+									<td><code>!important</code></td>
+									<td>override</td>
+									<td>Beats normal declarations, id rules included</td>
+								</tr>
+								<tr>
+									<td><code>px</code></td>
+									<td>absolute</td>
+									<td>Relative to nothing — always the same</td>
+								</tr>
+								<tr>
+									<td><code>%</code></td>
+									<td>of the parent</td>
+									<td>25% of a 900px parent = 225px</td>
+								</tr>
+								<tr>
+									<td><code>em</code></td>
+									<td>of its own font</td>
+									<td>0.5em at 14px = 7px; compounds when nested</td>
+								</tr>
+								<tr>
+									<td><code>rem</code></td>
+									<td>of the root font</td>
+									<td>2rem = 32px at a 16px root; never compounds</td>
+								</tr>
+								<tr>
+									<td><code>vw / vh</code></td>
+									<td>of the viewport</td>
+									<td>50vw on a 375px screen = 187.5px</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+
+			<!-- ========================== CTA =============================== -->
+			<section class="wrap">
+				<div class="cta-band">
+					<h2>Test yourself before the exam</h2>
+					<p>
+						Cover the right-hand pane, read the CSS, and predict what changes. That's the whole
+						revision method.
+					</p>
+					<form onsubmit="return false;">
+						<label for="email">Email me the sheet</label>
+						<input id="email" name="email" type="email" placeholder="you@example.com" />
+						<button class="btn btn-cta" type="submit">Send it</button>
+					</form>
+				</div>
+			</section>
+		</main>
+
+		<footer>
+			<div class="wrap foot-cols">
+				<div>
+					<h4>Selectors &amp; Units</h4>
+					<p>A visual revision companion for the HTML &amp; CSS slide deck.</p>
+				</div>
+				<div>
+					<h4>Sections</h4>
+					<ul>
+						<li><a href="#selectors">Group selectors</a></li>
+						<li><a href="#combinators">Combinators</a></li>
+						<li><a href="#classes">Classes &amp; !important</a></li>
+						<li><a href="#units">Measurement units</a></li>
+					</ul>
+				</div>
+				<div>
+					<h4>Order of study</h4>
+					<ol>
+						<li><a href="#selectors">Grouping first</a></li>
+						<li><a href="#combinators">Then position</a></li>
+						<li><a href="#units">Then sizing</a></li>
+					</ol>
+				</div>
+			</div>
+		</footer>
+
+		<script src="script.js"></script>
 	</body>
 </html>
