@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Pg PathWay">
+  <title>Pg PathWay</title>
+  <defs>
+    <linearGradient id="pgTile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0F766E"/>
+      <stop offset="1" stop-color="#14B8A6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="64" height="64" rx="18" fill="url(#pgTile)"/>
+
+  <!-- The pathway: a rising route from the starting point up to the cap -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M17 47C19.5 37 29 37.5 32 29"/>
+    <path d="M34 24.5C36 19.5 39 18 42.5 17.5" stroke-dasharray="0.1 7.5"/>
+  </g>
+
+  <circle cx="17" cy="47" r="5.5" fill="#FFFFFF"/>
+
+  <!-- Graduation cap at the destination -->
+  <g fill="#FFFFFF">
+    <path d="M45 11 58 17.2 45 23.4 32 17.2 45 11Z"/>
+    <path d="M37.5 20.8v4.4c0 2.2 3.4 3.8 7.5 3.8s7.5-1.6 7.5-3.8v-4.4L45 24.6l-7.5-3.8Z" opacity=".8"/>
+  </g>
+</svg>
