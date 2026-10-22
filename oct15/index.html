@@ -1,162 +1,387 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
+		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Bootstrap demo</title>
+		<title>Week 9 – Forms, Modals & Carousels</title>
 		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
 			rel="stylesheet"
-			integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-			crossorigin="anonymous"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
 		/>
+		<style>
+			:root {
+				--bs-primary: #43145e;
+				--bs-primary-rgb: 154, 52, 18;
+				--bs-link-color: #43145e;
+				--bs-link-hover-color: #43145e;
+				--bs-focus-ring-color: rgba(154, 52, 18, 0.25);
+			}
+
+			body {
+				background-color: #fffcfc;
+			}
+
+			.bg-brand-orange {
+				background-color: #43145e;
+			}
+
+			.text-brand-orange {
+				color: #43145e;
+			}
+
+			.btn-primary {
+				--bs-btn-color: #fff;
+				--bs-btn-bg: #43145e;
+				--bs-btn-border-color: #43145e;
+				--bs-btn-hover-color: #fff;
+				--bs-btn-hover-bg: #43145e;
+				--bs-btn-hover-border-color: #43145e;
+				--bs-btn-focus-shadow-rgb: 154, 52, 18;
+				--bs-btn-active-color: #fff;
+				--bs-btn-active-bg: #43145e;
+				--bs-btn-active-border-color: #43145e;
+				--bs-btn-disabled-color: #fff;
+				--bs-btn-disabled-bg: #43145e;
+				--bs-btn-disabled-border-color: #43145e;
+			}
+		</style>
 	</head>
-	<body style="margin: 20px">
-		<form class="p-3">
-			<div>
-				<img src="image.png" />
-				<h1 class="mb-2" style="font-weight: 900">Create You Account</h1>
-				<p style="font-style: italic; color: gray">
-					Your data is safe with us. We will never share your information.
-				</p>
-			</div>
-
-			<div class="mb-3">
-				<label for="email" class="form-label">Email Address</label>
-				<input
-					type="email"
-					class="form-control is-invalid"
-					id="em"
-					required
-					placeholder="dphub011@gmail.com"
-				/>
-				<div class="invalid-feedback">Please enter the Valid Email</div>
-			</div>
-
-			<div class="mb-2">
-				<select class="form-select" aria-label="Default select example">
-					<option selected>Qualification</option>
-					<option value="1">10 Passed Out</option>
-					<option value="2">12 Passed Out</option>
-					<option value="3">Degree</option>
-				</select>
-			</div>
-			<div class="mb-3">
-				<label for="date" class="form-label">D.O.B</label>
-				<input type="date" class="form-control" id="date" />
-			</div>
-			<label class="mb-1">Select the Gender</label>
-			<div class="mb-3">
-				<div class="form-check form-check-inline">
-					<input
-						class="form-check-input"
-						type="radio"
-						name="inlineRadioOptions"
-						id="inlineRadio1"
-						value="option1"
-					/>
-					<label class="form-check-label" for="inlineRadio1">Male</label>
-				</div>
-				<div class="form-check form-check-inline">
-					<input
-						class="form-check-input"
-						type="radio"
-						name="inlineRadioOptions"
-						id="inlineRadio2"
-						value="option2"
-					/>
-					<label class="form-check-label" for="inlineRadio2">Female</label>
+	<body>
+		<nav class="navbar navbar-expand-md navbar-dark bg-brand-orange">
+			<div class="container">
+				<a class="navbar-brand" href="#">World</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#mainNav"
+					aria-controls="mainNav"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="mainNav">
+					<ul class="navbar-nav ms-auto">
+						<li class="nav-item">
+							<a class="nav-link active" href="#">Home</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="#work">Work</a></li>
+						<li class="nav-item">
+							<a
+								class="nav-link"
+								href="#"
+								data-bs-toggle="modal"
+								data-bs-target="#contactModal"
+								>Contact</a
+							>
+						</li>
+					</ul>
 				</div>
 			</div>
-			<div class="mb-3">
-				<label for="inputPassword5" class="form-label">Password</label>
-				<input
-					type="password"
-					id="inputPassword5"
-					class="form-control"
-					aria-describedby="passwordHelpBlock"
-					placeholder="**********"
-				/>
-			</div>
-
-			<div class="mb-3">
+		</nav>
+		<div
+			id="heroSlides"
+			class="carousel slide carousel-fade"
+			data-bs-ride="carousel"
+		>
+			<div class="carousel-indicators">
 				<button
 					type="button"
-					class="btn btn-danger"
-					data-bs-toggle="modal"
-					data-bs-target="#staticBackdrop"
-				>
-					Delete
-				</button>
-				<div
-					class="modal fade"
-					id="staticBackdrop"
-					data-bs-backdrop="static"
-					data-bs-keyboard="false"
-					tabindex="-1"
-					aria-labelledby="staticBackdropLabel"
-					aria-hidden="true"
-				>
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h1 class="modal-title fs-5" id="staticBackdropLabel">
-									Delete
-								</h1>
-								<button
-									type="button"
-									class="btn-close"
-									data-bs-dismiss="modal"
-									aria-label="Close"
-								></button>
-							</div>
-							<div class="modal-body">
-								Are you sure you want to delete this user!
-							</div>
-							<div class="modal-footer">
-								<button
-									type="button"
-									class="btn btn-secondary"
-									data-bs-dismiss="modal"
-								>
-									Cancel
-								</button>
-								<button type="button" class="btn btn-danger">Delete</button>
-							</div>
+					data-bs-target="#heroSlides"
+					data-bs-slide-to="0"
+					class="active"
+					aria-current="true"
+					aria-label="Slide 1"
+				></button>
+				<button
+					type="button"
+					data-bs-target="#heroSlides"
+					data-bs-slide-to="1"
+					aria-label="Slide 2"
+				></button>
+				<button
+					type="button"
+					data-bs-target="#heroSlides"
+					data-bs-slide-to="2"
+					aria-label="Slide 3"
+				></button>
+			</div>
+			<div class="carousel-inner">
+				<div class="carousel-item active" data-bs-interval="4000">
+					<img
+						class="d-block w-100 object-fit-cover"
+						style="height: 400px"
+						alt="Green mountain valley in Bhutan"
+						src="img/1.png"
+					/>
+					<div class="carousel-caption d-none d-md-block">
+						<h5>Mountain Trek</h5>
+						<p>Walk above the clouds.</p>
+						<a href="#work" class="btn btn-primary">Learn more</a>
+					</div>
+				</div>
+				<div class="carousel-item" data-bs-interval="8000">
+					<img
+						class="d-block w-100 object-fit-cover"
+						style="height: 400px"
+						alt="A Bhutanese dzong beside a river and green hills"
+						src="img/2.png"
+					/>
+					<div class="carousel-caption d-none d-md-block">
+						<h5>Heritage &amp; Culture</h5>
+						<p>Traditional architecture beside a river valley.</p>
+					</div>
+				</div>
+				<div class="carousel-item" data-bs-interval="4000">
+					<img
+						class="d-block w-100 object-fit-cover"
+						style="height: 400px"
+						alt="A Bhutanese town and fields beneath the mountains"
+						src="img/3.png"
+					/>
+					<div class="carousel-caption d-none d-md-block">
+						<h5>Valley Views</h5>
+						<p>Discover the towns and fields of Bhutan.</p>
+					</div>
+				</div>
+			</div>
+			<button
+				class="carousel-control-prev"
+				type="button"
+				data-bs-target="#heroSlides"
+				data-bs-slide="prev"
+			>
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button
+				class="carousel-control-next"
+				type="button"
+				data-bs-target="#heroSlides"
+				data-bs-slide="next"
+			>
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+		<main class="container my-5">
+			<h2 id="work" class="mb-4 text-brand-orange">Let's Go</h2>
+			<div class="row row-cols-1 row-cols-md-3 g-4">
+				<div class="col">
+					<div class="card h-100">
+						<img
+							class="card-img-top object-fit-cover"
+							style="height: 180px"
+							alt="A Bhutanese dzong beside a river"
+							src="img/im1.jpg"
+						/>
+						<div class="card-body">
+							<h5 class="card-title">Bhutanese Heritage</h5>
+							<p class="card-text">
+								A traditional dzong beside a river and green hills.
+							</p>
+							<button
+								class="btn btn-primary"
+								data-bs-toggle="modal"
+								data-bs-target="#contactModal"
+							>
+								Ask about it
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card h-100">
+						<img
+							class="card-img-top object-fit-cover"
+							style="height: 180px"
+							alt="Green mountain valley in Bhutan"
+							src="img/im3.jpg"
+						/>
+						<div class="card-body">
+							<h5 class="card-title">Mountain Valley</h5>
+							<p class="card-text">
+								A scenic view across Bhutan's forested mountain valley.
+							</p>
+							<button
+								class="btn btn-primary"
+								data-bs-toggle="modal"
+								data-bs-target="#contactModal"
+							>
+								Ask about it
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card h-100">
+						<img
+							class="card-img-top object-fit-cover"
+							style="height: 180px"
+							alt="Bhutanese town and fields beneath the mountains"
+							src="img/image copy.png"
+						/>
+						<div class="card-body">
+							<h5 class="card-title">Bhutanese Countryside</h5>
+							<p class="card-text">
+								A town and terraced fields set against the mountains.
+							</p>
+							<button
+								class="btn btn-primary"
+								data-bs-toggle="modal"
+								data-bs-target="#contactModal"
+							>
+								Ask about it
+							</button>
 						</div>
 					</div>
 				</div>
 			</div>
-
-			<div class="col-12 mb-3">
-				<div class="form-check">
+			<h2 class="mt-5 mb-3 text-brand-orange">Contact Form</h2>
+			<form id="contactForm" class="row g-3 needs-validation" novalidate>
+				<div class="col-md-6">
+					<label for="firstName" class="form-label">First name</label>
+					<input type="text" class="form-control" id="firstName" required />
+					<div class="invalid-feedback">Please enter your first name.</div>
+				</div>
+				<div class="col-md-6">
+					<label for="lastName" class="form-label">Last name</label>
+					<input type="text" class="form-control" id="lastName" required />
+					<div class="invalid-feedback">Please enter your last name.</div>
+				</div>
+				<div class="col-12">
+					<label for="formEmail" class="form-label">Email</label>
 					<input
-						class="form-check-input"
-						type="checkbox"
-						id="inlineFormCheck"
+						type="email"
+						class="form-control"
+						id="formEmail"
+						placeholder="name@example.com"
+						required
 					/>
-					<label class="form-check-label" for="inlineFormCheck">
-						Remember me
-					</label>
+					<div class="invalid-feedback">Please enter a valid email.</div>
+				</div>
+				<div class="col-md-4">
+					<label for="city" class="form-label">City</label>
+					<input type="text" class="form-control" id="city" />
+				</div>
+				<div class="col-md-4">
+					<label for="topic" class="form-label">Topic</label>
+					<select class="form-select" id="topic" required>
+						<option value="">Choose...</option>
+						<option>Web</option>
+						<option>Design</option>
+						<option>Other</option>
+					</select>
+					<div class="invalid-feedback">Please choose a topic.</div>
+				</div>
+				<div class="col-md-4">
+					<label for="zip" class="form-label">Zip</label>
+					<input type="text" class="form-control" id="zip" />
+				</div>
+				<div class="col-12">
+					<div class="form-check">
+						<input
+							class="form-check-input"
+							type="checkbox"
+							id="agree"
+							required
+						/>
+						<label class="form-check-label" for="agree"
+							>I agree to the terms</label
+						>
+						<div class="invalid-feedback">
+							You must agree before submitting.
+						</div>
+					</div>
+				</div>
+				<div class="col-12">
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+			</form>
+			<h2 class="mt-5 mb-3 text-brand-orange">Newsletter</h2>
+			<form class="row">
+				<div class="col-12 col-md-8 col-lg-6">
+					<div class="input-group">
+						<span class="input-group-text">@</span>
+						<input
+							type="email"
+							class="form-control"
+							placeholder="Your email"
+							aria-label="Newsletter email"
+						/>
+						<button class="btn btn-primary" type="submit">Subscribe</button>
+					</div>
+				</div>
+			</form>
+		</main>
+		<div
+			class="modal fade"
+			id="contactModal"
+			tabindex="-1"
+			aria-labelledby="contactModalLabel"
+			aria-hidden="true"
+			data-bs-backdrop="static"
+		>
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="contactModalLabel">Contact Us</h5>
+						<button
+							type="button"
+							class="btn-close"
+							data-bs-dismiss="modal"
+							aria-label="Close"
+						></button>
+					</div>
+					<div class="modal-body">
+						<form id="modalForm">
+							<div class="mb-3">
+								<label for="modalName" class="form-label">Name</label>
+								<input type="text" class="form-control" id="modalName" />
+							</div>
+							<div class="mb-3">
+								<label for="modalEmail" class="form-label">Email</label>
+								<input type="email" class="form-control" id="modalEmail" />
+							</div>
+							<div class="mb-3">
+								<label for="modalMessage" class="form-label">Message</label>
+								<textarea
+									class="form-control"
+									id="modalMessage"
+									rows="4"
+								></textarea>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button
+							type="button"
+							class="btn btn-secondary"
+							data-bs-dismiss="modal"
+						>
+							Close
+						</button>
+						<button type="submit" form="modalForm" class="btn btn-primary">
+							Send
+						</button>
+					</div>
 				</div>
 			</div>
-
-			<button
-				type="submit"
-				class="btn"
-				style="
-					background-color: rgb(107, 77, 0);
-					color: aliceblue;
-					font-weight: 900;
-				"
-			>
-				Sign In
-			</button>
-		</form>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-			crossorigin="anonymous"
-		></script>
+		</div>
+		<footer class="bg-brand-orange text-light text-center py-3">
+			<small>Frontend Web Development · Phub Dorji</small>
+		</footer>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+		<script>
+			document.querySelectorAll(".needs-validation").forEach((form) => {
+				form.addEventListener("submit", (event) => {
+					if (!form.checkValidity()) {
+						event.preventDefault();
+					}
+					form.classList.add("was-validated");
+				});
+			});
+		</script>
 	</body>
 </html>
