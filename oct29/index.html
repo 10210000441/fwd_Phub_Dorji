@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BookEase | Appointment Booking</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">BookEase</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero booking-hero d-flex align-items-center text-center text-white">
+      <div class="container py-5">
+        <p class="text-uppercase fw-semibold mb-2">Appointments made easy</p>
+        <h1 class="display-4 fw-bold">Book the right service, at the right time</h1>
+        <p class="lead mx-auto hero-copy">Find trusted professionals, choose a convenient time and reserve your appointment in minutes.</p>
+        <a class="btn btn-accent btn-lg" href="booking.html">Book an appointment</a>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="container">
+        <div class="text-center mb-4">
+          <p class="eyebrow">What would you like to book?</p>
+          <h2>Popular booking services</h2>
+        </div>
+        <div id="popularServicesCarousel" class="carousel slide popular-services-carousel" data-bs-ride="false">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="carousel-card-row">
+                <a class="service-showcase" href="service.html#grounds">
+                  <img src="https://images.unsplash.com/photo-1529900748604-07564a03e7a6?auto=format&fit=crop&w=1200&q=80" alt="Football ground">
+                  <div class="service-showcase-content"><span>Sports venues</span><h3>Book a ground</h3><p>Football, futsal, tennis and basketball grounds.</p><strong>Browse grounds &rarr;</strong></div>
+                </a>
+                <a class="service-showcase" href="service.html#vehicles">
+                  <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1200&q=80" alt="Rental car">
+                  <div class="service-showcase-content"><span>Car rentals</span><h3>Rent a car</h3><p>Economy, SUV and premium cars for every journey.</p><strong>Browse cars &rarr;</strong></div>
+                </a>
+                <a class="service-showcase" href="service.html#courts">
+                  <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=1200&q=80" alt="Tennis court">
+                  <div class="service-showcase-content"><span>Sports courts</span><h3>Book a tennis court</h3><p>Indoor and outdoor courts for practice or matches.</p><strong>Browse courts &rarr;</strong></div>
+                </a>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="carousel-card-row">
+                <a class="service-showcase" href="service.html#bikes">
+                  <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1200&q=80" alt="Rental motorcycle">
+                  <div class="service-showcase-content"><span>Two-wheel rentals</span><h3>Rent a bike</h3><p>Motorbikes and bicycles for every kind of trip.</p><strong>Browse bikes &rarr;</strong></div>
+                </a>
+                <a class="service-showcase" href="service.html#fitness">
+                  <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80" alt="Fitness studio">
+                  <div class="service-showcase-content"><span>Fitness sessions</span><h3>Book a gym or coach</h3><p>Classes, personal training and studio sessions.</p><strong>Browse fitness &rarr;</strong></div>
+                </a>
+                <a class="service-showcase" href="service.html#studios">
+                  <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=1200&q=80" alt="Music studio">
+                  <div class="service-showcase-content"><span>Creative space</span><h3>Book a music studio</h3><p>Recording and rehearsal rooms with equipment.</p><strong>Browse studios &rarr;</strong></div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#popularServicesCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#popularServicesCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="listing-section py-5">
+      <div class="container">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-md-items-end gap-3 mb-4">
+          <div>
+            <p class="eyebrow">Explore availability</p>
+            <h2>Book your next outing</h2>
+          </div>
+          <ul class="nav nav-pills booking-tabs" id="listingTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#recent" type="button" role="tab">Recent</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="pill" data-bs-target="#trending" type="button" role="tab">Trending</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="pill" data-bs-target="#all" type="button" role="tab">All</button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="tab-content" id="listingTabsContent">
+          <div class="tab-pane fade show active" id="recent" role="tabpanel">
+            <div class="row g-4">
+              <div class="col-sm-6 col-lg-4">
+                <article class="listing-card card h-100">
+                  <img src="https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Outdoor football ground">
+                  <div class="card-body"><span class="listing-type">Ground</span><h3 class="h5 card-title">Thimphu City Arena</h3><p class="card-text">Full-size football ground with changing rooms.</p><div class="listing-meta"><strong>Nu. 1,500/hr</strong><a href="booking.html">Book &rarr;</a></div></div>
+                </article>
+              </div>
+              <div class="col-sm-6 col-lg-4">
+                <article class="listing-card card h-100">
+                  <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="White rental SUV">
+                  <div class="card-body"><span class="listing-type">Rental car</span><h3 class="h5 card-title">Toyota RAV4</h3><p class="card-text">Comfortable automatic SUV for city and mountain trips.</p><div class="listing-meta"><strong>Nu. 3,500/day</strong><a href="booking.html">Book &rarr;</a></div></div>
+                </article>
+              </div>
+              <div class="col-sm-6 col-lg-4">
+                <article class="listing-card card h-100">
+                  <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Tennis court">
+                  <div class="card-body"><span class="listing-type">Ground</span><h3 class="h5 card-title">Riverfront Tennis Court</h3><p class="card-text">Floodlit outdoor court with racquet rental available.</p><div class="listing-meta"><strong>Nu. 800/hr</strong><a href="booking.html">Book &rarr;</a></div></div>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="trending" role="tabpanel">
+            <div class="row g-4">
+              <div class="col-sm-6 col-lg-4">
+                <article class="listing-card card h-100"><img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Indoor sports court"><div class="card-body"><span class="listing-type">Ground</span><h3 class="h5">Central Futsal Arena</h3><p>Popular indoor futsal with evening slots.</p><div class="listing-meta"><strong>Nu. 1,200/hr</strong><a href="booking.html">Book &rarr;</a></div></div></article>
+              </div>
+              <div class="col-sm-6 col-lg-4">
+                <article class="listing-card card h-100"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Sports rental car"><div class="card-body"><span class="listing-type">Rental car</span><h3 class="h5">Hyundai Creta</h3><p>Compact SUV with flexible pickup and drop-off.</p><div class="listing-meta"><strong>Nu. 2,900/day</strong><a href="booking.html">Book &rarr;</a></div></div></article>
+              </div>
+              <div class="col-sm-6 col-lg-4">
+                <article class="listing-card card h-100"><img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Basketball court"><div class="card-body"><span class="listing-type">Ground</span><h3 class="h5">Valley Basketball Court</h3><p>Outdoor court with lighting and equipment rental.</p><div class="listing-meta"><strong>Nu. 700/hr</strong><a href="booking.html">Book &rarr;</a></div></div></article>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="all" role="tabpanel">
+            <div class="row g-4">
+              <div class="col-sm-6 col-lg-3"><article class="listing-card card h-100"><img src="https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Football ground"><div class="card-body"><span class="listing-type">Ground</span><h3 class="h5">City Football Ground</h3><p>Nu. 1,500/hr</p><a class="small-link" href="booking.html">View & book</a></div></article></div>
+              <div class="col-sm-6 col-lg-3"><article class="listing-card card h-100"><img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Rental SUV"><div class="card-body"><span class="listing-type">Rental car</span><h3 class="h5">Toyota RAV4</h3><p>Nu. 3,500/day</p><a class="small-link" href="booking.html">View & book</a></div></article></div>
+              <div class="col-sm-6 col-lg-3"><article class="listing-card card h-100"><img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Tennis court"><div class="card-body"><span class="listing-type">Ground</span><h3 class="h5">River Tennis Court</h3><p>Nu. 800/hr</p><a class="small-link" href="booking.html">View & book</a></div></article></div>
+              <div class="col-sm-6 col-lg-3"><article class="listing-card card h-100"><img src="https://images.unsplash.com/photo-1550355191-aa8a80b41353?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Rental hatchback"><div class="card-body"><span class="listing-type">Rental car</span><h3 class="h5">Compact Hatchback</h3><p>Nu. 1,800/day</p><a class="small-link" href="booking.html">View & book</a></div></article></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="container">
+        <div class="text-center mb-4">
+          <p class="eyebrow">Why BookEase</p>
+          <h2>Simple booking from start to finish</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="feature-card h-100">
+              <span class="feature-number">01</span>
+              <h3>Trusted providers</h3>
+              <p>Choose from carefully reviewed professionals.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card h-100">
+              <span class="feature-number">02</span>
+              <h3>Flexible scheduling</h3>
+              <p>Find appointments that fit your daily routine.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card h-100">
+              <span class="feature-number">03</span>
+              <h3>Instant confirmation</h3>
+              <p>Receive booking details quickly and securely.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-section py-5">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <div class="booking-preview" aria-hidden="true">
+              <div><span>MON</span><strong>14</strong></div>
+              <div><span>10:30 AM</span><strong>Hair consultation</strong><small>confirmed</small></div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <p class="eyebrow">Built around you</p>
+            <h2>Appointments without the phone call</h2>
+            <p>Browse available services, compare specialists and make a reservation whenever it suits you. Manage your plan with clear, upfront information.</p>
+            <a href="about.html" class="btn btn-outline-dark">How it works</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="container">
+        <div class="text-center mb-4">
+          <p class="eyebrow">How to book</p>
+          <h2>Three easy steps</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4"><div class="journey-step h-100"><span>1</span><h3>Choose a service</h3><p>Explore categories and select a service provider.</p></div></div>
+          <div class="col-md-4"><div class="journey-step h-100"><span>2</span><h3>Pick a time</h3><p>View real availability and reserve your preferred slot.</p></div></div>
+          <div class="col-md-4"><div class="journey-step h-100"><span>3</span><h3>Confirm</h3><p>Share your details and receive booking confirmation.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section text-center text-white py-5">
+      <div class="container">
+        <h2>Ready to make your appointment?</h2>
+        <p class="mb-4">Choose a service and reserve your preferred time today.</p>
+        <a class="btn btn-accent" href="booking.html">Start booking</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer text-white py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+      <span>&copy; 2026 BookEase</span>
+      <span>Appointments, made simple.</span>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

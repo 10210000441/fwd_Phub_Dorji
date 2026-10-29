@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>BookEase | Booking</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+			<div class="container">
+				<a class="navbar-brand fw-bold" href="index.html">BookEase</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#mainNav"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="mainNav">
+					<ul class="navbar-nav ms-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="about.html">About</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="service.html">Services</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" href="booking.html">Booking</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="contact.html">Contact</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<main>
+			<header class="page-header">
+				<div class="container text-center">
+					<p class="eyebrow text-white">Reserve your time</p>
+					<h1>Book your appointment</h1>
+				</div>
+			</header>
+			<section class="py-5">
+				<div class="container">
+					<div class="row g-4">
+						<div class="col-lg-7">
+							<form class="booking-form">
+								<h2 class="mb-4">Appointment details</h2>
+								<div class="row g-3">
+									<div class="col-md-6">
+										<label class="form-label" for="full-name">Full name</label
+										><input class="form-control" id="full-name" required />
+									</div>
+									<div class="col-md-6">
+										<label class="form-label" for="booking-email">Email</label
+										><input
+											class="form-control"
+											id="booking-email"
+											type="email"
+											required
+										/>
+									</div>
+									<div class="col-md-6">
+										<label class="form-label" for="service-name">Service</label
+										><select class="form-select" id="service-name">
+											<option>Health Consultation</option>
+											<option>Beauty & Salon</option>
+											<option>Expert Consultation</option>
+										</select>
+									</div>
+									<div class="col-md-6">
+										<label class="form-label" for="appointment-date"
+											>Preferred date</label
+										><input
+											class="form-control"
+											id="appointment-date"
+											type="date"
+											required
+										/>
+									</div>
+									<div class="col-md-6">
+										<label class="form-label" for="appointment-time"
+											>Preferred time</label
+										><select class="form-select" id="appointment-time">
+											<option>09:00 AM</option>
+											<option>11:30 AM</option>
+											<option>02:00 PM</option>
+											<option>04:30 PM</option>
+										</select>
+									</div>
+									<div class="col-md-6">
+										<label class="form-label" for="provider">Provider</label
+										><select class="form-select" id="provider">
+											<option>First available</option>
+											<option>Dr. Maya Chen</option>
+											<option>Avery Studio</option>
+											<option>Northside Advisory</option>
+										</select>
+									</div>
+									<div class="col-12">
+										<label class="form-label" for="requests"
+											>Special requests</label
+										><textarea
+											class="form-control"
+											id="requests"
+											rows="4"
+										></textarea>
+									</div>
+									<div class="col-12">
+										<button class="btn btn-accent" type="submit">
+											Request booking
+										</button>
+									</div>
+								</div>
+							</form>
+						</div>
+						<aside class="col-lg-5">
+							<div class="booking-summary">
+								<p class="eyebrow">Booking notes</p>
+								<h2>What happens next?</h2>
+								<ol>
+									<li>Your provider confirms availability.</li>
+									<li>You receive appointment details.</li>
+									<li>Arrive at the scheduled time.</li>
+								</ol>
+								<p class="mb-0">
+									<strong>Need help?</strong><br /><a href="contact.html"
+										>Speak with our booking team.</a
+									>
+								</p>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="site-footer text-white py-4">
+			<div
+				class="container d-flex flex-column flex-md-row justify-content-between gap-2"
+			>
+				<span>&copy; 2026 BookEase</span><span>Appointments, made simple.</span>
+			</div>
+		</footer>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>
